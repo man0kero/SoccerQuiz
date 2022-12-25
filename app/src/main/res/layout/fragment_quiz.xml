@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".QuizFragment">
+
+    <data>
+
+        <variable
+            name="quizFragment"
+            type="android.example.soccerquiz.QuizFragment" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D38BC34A"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quiz_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/footballField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="52dp"
+                android:src="@drawable/ic_football_field"
+                app:layout_constraintBottom_toTopOf="@+id/guideline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="493dp" />
+
+            <ImageView
+                android:id="@+id/ball"
+                android:layout_width="43dp"
+                android:layout_height="41dp"
+                android:src="@drawable/ic_ball"
+                app:layout_constraintBottom_toBottomOf="@+id/footballField"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.45" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="Soccer Quiz"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toTopOf="@+id/ball"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <RadioGroup
+                android:id="@+id/quizRadioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:checked="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ball">
+
+                <RadioButton
+                    android:id="@+id/firstRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:checked="false"
+                    android:fontFamily="@font/aclonica"
+                    android:text="@{quizFragment.answers[0]}"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:text="firstRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/secondRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:checked="false"
+                    android:fontFamily="@font/aclonica"
+                    android:text="@{quizFragment.answers[1]}"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:text="secondRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/thirdRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:checked="false"
+                    android:fontFamily="@font/aclonica"
+                    android:text="@{quizFragment.answers[2]}"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    tools:text="thirdRadioButton" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/questionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/aclonica"
+                android:padding="10dp"
+                android:text="@{quizFragment.currentQuizItem.question}"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/quizRadioGroup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                tools:text="questionTextView" />
+
+            <Button
+                android:id="@+id/passButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Pass"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline5"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="256dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
